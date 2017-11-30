@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+/* ---------- GENERAL ---------- */
+
+body {
+    background: #e5e5e5;
+    color: #272727;
+    font: 16px/40px "Open Sans", sans-serif;
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+hr {
+    background: #5e5e5e;
+    border: none;
+    height: 1px;
+    margin: 0;
+    min-height: 1px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 320px;
+    left: 50%;
+    margin: -160px 0 0 -152px;
+    position: absolute;
+    top: 50%;
+    width: 304px;
+}
+
+
+/* ---------- To-Do-List ---------- */
+
+.to-do-list {
+    background: -webkit-linear-gradient(top, #aaa, #fff 2%);
+    background: -moz-linear-gradient(top, #aaa, #fff 2%);
+    background: -o-linear-gradient(top, #aaa, #fff 2%);
+    background: -ms-linear-gradient(top, #aaa, #fff 2%);
+    background: linear-gradient(top, #aaa, #fff 2%);
+    -webkit-background-size: 100% 40px;
+    -moz-background-size: 100% 40px;
+    background-size: 100% 40px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.200), 0 3px 0 rgba(255, 255, 255, 1.0), 0 4px 0 rgba(0, 0, 0, 0.15), 0 6px 0 rgba(255, 255, 255, 1.0);
+    font-size: 14px;
+    padding: 40px 32px;
+    width: 240px;
+}
+
+.to-do-list h2 {
+    color: #5e5e5e;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.to-do-list input[type=checkbox] {
+    cursor: pointer;
+    position: relative;
+    visibility: hidden;
+}
+
+.to-do-list input[type="checkbox"]:after {
+    border: 1px solid #166B94;
+    border-radius: 3px;
+    color: #fff;
+    content: "";
+    display: block;
+    height: 16px;
+    line-height: 16px;
+    position: absolute;
+    text-align: center;
+    visibility: visible;
+    width: 16px;
+}
+
+.to-do-list input[type=checkbox]:checked:after {
+    border: 1px solid #979797;
+    color: #979797;
+    content: "✓";
+}
+
+.to-do-list input[type=checkbox]:checked + label {
+    color: #979797;
+    font-weight: normal;
+    text-decoration: line-through;
+}
+
+.to-do-list label {
+    color: #166B94;
+    font-weight: bold;
+    margin-left: 12px;
+}
+
+.done-true {
+    text-decoration: line-through;
+    color: grey;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+
+<head>
+    <title>TODO List using Angular JS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="to-do-list" ng-controller="TodoListController as todoList">
+            <div id="list">
+                <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span> [ <a href="" ng-click="todoList.archive()">archive</a> ] 
+            </div>
+            
+            <h2>TODO list</h2>
+
+            <hr>
+
+            <ul class="unstyled">
+                <li ng-repeat="todo in todoList.todos">
+                    <input id="checkbox" type="checkbox" ng-model="todo.done">
+                    <label for="checkbox1" class="done-{{todo.done}}">{{todo.text}}</label>
+                </li>
+                <li>
+                    <form ng-submit="todoList.addTodo()">
+                        <input type="text" ng-model="todoList.todoText" size="auto" placeholder="Add new TODO here">
+                        <input class="btn-primary" type="submit" value="Add">
+                    </form>
+                </li>
+
+            </ul>
+
+        </div>
+        <!-- end to-do-list -->
+
+    </div>
+    <!-- end container -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // jQuery to move the #list below
+            $('.container').append($('#list'));
+        })
+    </script>
+</body>
+
+</html>
